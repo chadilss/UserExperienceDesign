@@ -1,0 +1,15 @@
+
+Buttons
+=======
+Green - 38B44A
+Orange - DD4814
+Gray - AEA79F
+
+
+Scroll Shadow - F5F5F5
+
+
+Top Page Header
+===============
+Orange - DD4814
+
