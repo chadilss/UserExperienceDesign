@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="AngularJS-Controller.js"></script>
+    <link rel="stylesheet" href="styles.css" type="text/css"/>
+</head>
+<body>
+    <div class="wrapper">
+        <div ng-app="myApp" ng-controller="customersCtrl" class="restTable">
+            <h1>Restaurant Name</h1>
+            <table align="center">
+                <tr height="100">
+                    <th>Item</th>
+                    <th>Quantity</th>
+                    <th>Single-Price</th>
+                    <th>Amount</th>
+                    <th></th>
+                </tr>
+                <tr ng-repeat="n in Products">
+                    <td class="item">
+                        <label ng-hide="editing">{{n.Item}}</label>
+                        <input class="item" ng-show="editing" ng-model="n.Item" />
+                    </td>
+
+                    <td class="item2">
+                        <label ng-hide="editing">{{n.Quantity}}</label>
+                        <input class="item2" ng-show="editing" ng-model="n.Quantity" type="text" />
+                    </td>
+                    <td class="item">
+                        <label ng-hide="editing">${{n.SinglePrice}}</label>
+                        <input ng-show="editing" ng-model="n.SinglePrice" type="text" />
+                    </td>
+                    <td class="item2">${{n.SinglePrice * n.Quantity}}</td>
+                    <td class="item2">
+                        <button type="button" class="button3" value="Remove"
+                                ng-click="removeRow(n.Item)">
+                            Remove
+                        </button>
+                    </td>
+
+                </tr>
+            </table>
+            <h4>Total Price: ${{GetTotal()}}</h4>
+
+
+
+            <button type="submit" class="button4" data-ng-hide="editMode" data-ng-click="editMode = true; editRow(n)"
+                    ng-click="editing = !editing">
+                Edit
+            </button>
+            <button type="submit" class="button4" data-ng-show="editMode" data-ng-click="editMode = false; save(n)">Save</button>
+
+
+            <p><button type="submit" class="button4" data-ng-click="editMode = true; addRow()">Add New Item</button></p>
+  </div>
+        <div>
+            <p>
+                <button id="myButton" class="button4">Ready for Payment</button>
+
+                <script type="text/javascript">
+                    document.getElementById("myButton").onclick = function () {
+                        location.href = "/customer.html";
+                    };
+                </script>
+            </p>
+            <p>
+                <button id="deinButton" class="button4">Check Payment</button>
+
+                <script type="text/javascript">
+                    document.getElementById("deinButton").onclick = function () {
+                        location.href = "/walletPage.html";
+                    };
+                </script>
+            </p>
+        </div>
+
+    </div>
+</body>
+</html>
+
+
