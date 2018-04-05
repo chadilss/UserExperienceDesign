@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Customer Payment | Bitcoin</title>
+    <link rel="stylesheet" href="styles.css" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="AngularJS-Controller.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+	<hr />
+    <header class="head">
+        <img class="bitImage" src="Bitcoin_accepted_here_button.png" alt="bitcoin Image" />
+        <h1 class="title">Bitcoin Payment</h1>
+    </header>
+        <hr />
+    <nav class="total" ng-app="myApp" ng-controller="customersCtrl">
+        
+
+        <table style="width:100%;">
+            <tr>
+                <th class="slipHead" colspan="4">Purchase Record</th>
+            </tr>
+            <tr>
+                <td>Table Number:</td>
+                <td>22</td>
+            </tr>
+
+            <tr>
+                <th>Item</th>
+                <th>Quantity</th>
+                <th>Single-Price</th>
+                <th>Amount</th>
+                <th></th>
+            </tr>
+            <tr ng-repeat="n in Products">
+                <td class="itit">
+                    <label  ng-hide="editing">{{n.Item}}</label>
+                    
+                </td>
+
+                <td class="itit">
+                    <label  ng-hide="editing">{{n.Quantity}}</label>
+                    
+                </td>
+                <td class="itit">
+                    <label ng-hide="editing">${{n.SinglePrice}}</label>
+                    
+                </td>
+                <td class="itit">${{n.SinglePrice * n.Quantity}}</td>
+            </tr>
+
+
+            <!--<tr>
+                <td>1 x</td>
+                <td>Heineken 500ml</td>
+                <td>$10.00</td>
+            </tr>
+            <tr>
+                <td>1 x</td>
+                <td>Pinot Gri Seddon</td>
+                <td>$15.00</td>
+            </tr>
+            <tr>
+                <td>1 x</td>
+                <td>Mushroom Arancini</td>
+                <td>$16.00</td>
+            </tr>
+            <tr>
+                <td>1 x</td>
+                <td>Potato Skins</td>
+                <td>$10.00</td>
+            </tr>-->
+            </table>
+        <h4>Total Price: ${{GetTotal()}}</h4>
+        <br />
+        <br />
+        <!--<table>
+            <tr>
+                <td>Total:</td>
+                <td colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{GetTotal()}}</td>
+            </tr>
+            <tr>
+                <td id="date"></td>
+            </tr>
+        </table>-->
+    </nav>
+    <article class="main">
+        <h3 class="scan">Please scan the QR Code to pay with Bitcoin</h3>
+        <img class="qr" src="QRCodeImage.png" alt="qrCode" />
+        <br />
+        <br />
+        <div id="myProgress">
+        <div id="myBar">0%</div>
+        </div>
+
+        <br />
+        <div>
+            <button class="payment" onclick="move(); setTimeout(myFunction, 1000); setTimeout(transfer, 4000)">Check Payment</button>
+            <p id="ty"></p>
+        </div>
+    </article>
+        <div id="convert">
+            <iframe frameBorder="0" scrolling="no" src="https://legacy.bigterminal.com/embed/ticker-widget/" width="244" height="100"></iframe>
+        </div>
+        <!--Begin Currency Converter Code-->
+<div id="FEXRdiv"></div>
+<script type="text/javascript">
+    var FEXR_c = "NZD", FEXR_a = "BTC", FEXR_amt = 1, FEXR_size = 728, FEXR_panel = 1, FEXR_button = 2;
+</script>
+<script type="text/javascript" src="//www.foreignexchangeresource.com/converterB.js"></script>
+<!--End Currency Converter Code-->
+    <script>
+        function move() {
+            var elem = document.getElementById("myBar");
+            var width = 10;
+            var id = setInterval(frame, 10);
+            function frame() {
+                if (width >= 100) {
+                    clearInterval(id);
+                } else {
+                    width++;
+                    elem.style.width = width + '%';
+                    elem.innerHTML = width * 1 + '%';
+                }
+            }
+        }
+
+        function myFunction() {
+            document.getElementById("ty").innerHTML = "Thank You!";
+        }
+
+        function transfer() {
+            
+                location.href = "restaurant.html";
+      
+        }
+    </script>
+</div>
+</body>
+</html>
