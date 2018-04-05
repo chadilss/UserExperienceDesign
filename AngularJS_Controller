@@ -1,0 +1,82 @@
+
+var app = angular.module('myApp', []);
+app.controller('customersCtrl', function ($scope, $http) {
+    
+    $scope.newProduct = {};
+    $scope.editing = false;
+
+    $scope.Products = [{
+        Item: "Steak",
+        Quantity: 1,
+        SinglePrice: 20
+    }, {
+        Item: "Salad",
+        Quantity: 2,
+        SinglePrice: 10
+    }, {
+        Item: "Fish and Chips",
+        Quantity: 1,
+        SinglePrice: 13
+    }];
+
+    //function to get sum price
+    $scope.GetTotal = function () {
+        var total = 0;
+        for (var i = 0; i < $scope.Products.length; i++) {
+            var product = $scope.Products[i];
+            total += (product.SinglePrice * product.Quantity);
+        }
+        return total;
+    };
+
+    //function to Edit a row
+    $scope.editRow = function (item) {
+        $scope.editing = true;
+        //$scope.newProduct = angular.copy(item);
+    }
+
+
+    $scope.save = function () {
+        $scope.editing = false;
+    }
+
+
+    //$scope.save = function (index) {
+    //    if ($scope.editing !== false) {
+    //        $scope.Products[$scope.editing] = $scope.newProduct;
+    //        $scope.editing = false;
+    //    }
+    //};
+
+
+    //function to delete a row
+    $scope.removeRow = function(item){				
+        var index = -1;		
+        var comArr = eval( $scope.Products );
+        for( var i = 0; i < comArr.length; i++ ) {
+            if( comArr[i].Item === item ) {
+                index = i;
+                break;
+            }
+        }
+        if( index === -1 ) {
+            alert( "Something gone wrong" );
+        }
+        $scope.Products.splice( index, 1 );		
+    };
+
+    //function to add a new row
+    $scope.addRow = function () {
+        var index = $scope.Products.length + 1;
+        $scope.editing = true;
+        var newProduct = {
+            'Item': "",
+            'Quantity': "",
+            'SinglePrice': "",
+        };
+        $scope.Products.push(newProduct);
+    };
+
+    //$scope.advstatus = false;
+
+});
