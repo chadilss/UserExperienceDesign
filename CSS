@@ -1,0 +1,198 @@
+body {
+    background-color: white;
+    margin: auto;
+}
+
+.ifrm {
+    border: 1px solid black;
+    margin: auto;
+}
+
+.bitImage {
+    width: 337px;
+    height: 101px;
+    float: left;
+    margin: 10px;
+}
+.title { 
+    color: black;
+    font-family: Verdana,sans-serif;
+    font-size: 2em;
+    text-align: center;
+    text-decoration: underline;
+    letter-spacing: 10px;
+    font-size: 50px;
+    margin: 0px 1px 1px 1px;
+}
+.slipHead { 
+    border-bottom: 3px solid black;
+    clear: left;
+    text-align: center;
+    height: 10px;
+    background-color: #CCCCCC;
+}
+.slip {
+    border: black solid 10px;
+}
+.total { 
+    padding: 0px 0px 10px 0px;
+    margin: 10px 10px 10px 10px;
+    border: 3px solid black;
+    width: 510px;
+    height: 450px;
+    background-color: white;
+    float: left;
+}
+.main { 
+    width: 750px;
+    height: 550px;
+    margin-top: 10px;
+    margin-right:10px;
+    float: right;
+}
+.wrapper { 
+    width: 1366px;
+    height: 1000px;
+    border: 1px solid black;
+    margin: auto;
+    text-align: center;
+    font-family: Verdana,sans-serif ;
+}
+
+
+div {
+    font-size:x-large;
+    
+}
+
+table, td, th {
+    border-collapse: collapse;
+    border: 1px solid black;
+    
+}
+
+.item {
+      width: 300px;
+}
+.item2 {
+    width: 150px;
+}
+
+
+.head { 
+    height: 130px;
+}
+iframe{
+
+    overflow: hidden;
+}
+.qr { 
+    margin: auto;
+    /*margin-left: 180px;
+    margin-top: 50px;*/
+}
+.scan { 
+    text-align: center;
+    color: black;
+    font-family: Verdana,sans-serif;
+}
+
+.payment {
+    text-align: center;
+    background-color: #4CAF50; /* Green */
+    width: 200px;
+    border: none;
+    color: white;
+    padding: 15px 28px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+#Button1 { 
+    margin-left: 420px;
+}
+#myProgress {
+    width: 100%;
+    background-color: #F5F5F5;
+}
+#myBar {
+    width: 1%;
+    height: 30px;
+    background-color: #38B44A;
+}
+#myBar {
+    width: 10%;
+    height: 30px;
+    background-color: #4CAF50;
+    text-align: center; /* To center it horizontally (if you want) */
+    line-height: 30px; /* To center it vertically */
+    color: WHITE; 
+}
+#convert { 
+    margin-left: 50px;
+    float: left;
+    clear: left;
+    margin-top: 70px;
+    
+}
+#FEXRdiv { 
+    margin-left: 500px;
+}
+
+.button2 {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 28px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button3 {
+    background-color: #ff6a00 ; /* Orange */
+    border: none;
+    color: white;
+    padding: 15px 28px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button4{
+    background-color: #4CAF50; /* Green */
+    width: 200px;
+    border: none;
+    color: white;
+    padding: 15px 28px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+#myButton, #deinButton {
+    display: inline-block;
+}
+
+#ty {
+    font-family: Verdana,sans-serif;
+    margin-bottom: 30px;
+    margin-top: 50px;
+    font-size:xx-large;
+}
+.itit {
+    height: 60px;
+}
